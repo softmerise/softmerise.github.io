@@ -61,15 +61,14 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
 
-      # ▼ NEW STEP ADDED HERE ▼
+      # ▼ CRITICAL FIX: Creates .nojekyll using absolute path to avoid 404s ▼
       - name: Disable Jekyll for GitHub Pages
-        run: touch ./webapp/out/.nojekyll
-      # ▲ END NEW STEP ▲
+        run: touch ${{ github.workspace }}/webapp/out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./webapp/out # <=== Next.js exports to 'out' folder by default
+          path: ./webapp/out
 
   # Deployment job
   deploy:

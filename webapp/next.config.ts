@@ -1,10 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  output: "export",  // <=== Enables static export
+  output: "export",  // <=== THIS IS CRITICAL. If missing, you get a 404.
   images: {
-    unoptimized: true, // <=== Required for static export unless using a custom loader
+    unoptimized: true,
   },
 };
 
