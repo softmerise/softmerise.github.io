@@ -20,9 +20,13 @@ export default function Home() {
       </nav>
 
       <section className="flex justify-center">
-        <div className="container w-150">
-          <p className="mx-auto py-8 px-3 text-xl">
-            This is a product-centric research lab engineering the deficits of the digital economy. We translate complex blockchain protocols into intuitive, user-focused solutions for the next generation of the web.
+        <div className="container py-9 w-150">
+          <p className="mx-auto  px-3 text-xl">
+            This is a product-centric research lab engineering user-focused solutions for Businesses.
+          </p>
+          <br />
+          <p className="mx-auto  px-3 text-xl">
+            We're builing <u>Softmerise</u> with the vision to build intutive software that re-engineers static business logic to the adaptive, high-efficiency workflows of the post-generative AI era.
           </p>
         </div>
       </section>
