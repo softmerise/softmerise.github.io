@@ -12,22 +12,30 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         .contact-page {
-            padding-top: 160px;
+            padding-top: 120px;
             padding-bottom: 120px;
             background-color: var(--bg-color);
-            min-height: calc(100vh - 160px);
+            min-height: calc(100vh - 120px);
             border-bottom: 1px solid var(--border-light);
         }
         
         .contact-page-header {
-            max-width: 700px;
+            width: 100%;
             margin-bottom: 64px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
         .contact-page-header h1 {
             font-size: 48px;
-            margin-bottom: 24px;
+            margin: 0;
             letter-spacing: -0.02em;
+            flex: 0 0 30%;
+        }
+
+        .header-subtitles {
+            flex: 0 0 60%;
         }
 
         .contact-page-header p {
@@ -35,60 +43,95 @@
             color: var(--text-body);
         }
 
-        .contact-form-wrapper {
-            max-width: 700px;
-        }
-        
-        fieldset {
-            border: none;
-            padding: 0;
-            margin-bottom: 48px;
+        @media (max-width: 768px) {
+            .contact-page-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+            .contact-page-header h1, .header-subtitles {
+                flex: 1 1 100%;
+                width: 100%;
+            }
         }
 
-        legend {
+        .contact-form-wrapper {
+            width: 100%;
+        }
+
+        .form-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding-bottom: 48px;
+            margin-bottom: 48px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .section-title {
+            flex: 0 0 30%;
+        }
+
+        .section-fields {
+            flex: 0 0 60%;
+        }
+
+        .section-title h2 {
             font-size: 20px;
             font-weight: 600;
             color: var(--text-dark);
-            margin-bottom: 24px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid var(--border-light);
-            width: 100%;
+            margin: 0;
+            padding-top: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .form-section {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .section-title, .section-fields {
+                flex: 1 1 100%;
+                width: 100%;
+            }
+            .section-title h2 {
+                padding-top: 0;
+            }
         }
 
         .form-control {
             color: var(--text-dark);
-            border-bottom-color: var(--border-light);
+            background-color: #ffffff;
+            border: 1px solid var(--border-light) !important;
+            border-radius: 6px;
+            padding: 12px 16px !important;
+            width: 100%;
+            font-family: inherit;
+            font-size: 16px;
+            transition: border-color 200ms ease, box-shadow 200ms ease;
         }
 
         .form-control:focus {
-            border-bottom-color: var(--text-dark);
+            outline: none;
+            border-color: var(--text-dark) !important;
+            box-shadow: 0 0 0 1px var(--text-dark);
         }
 
         .form-group label {
             color: var(--text-body);
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 500;
         }
 
-        .submit-btn.dark-btn {
-            background-color: var(--text-dark);
-            color: #fff;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .submit-btn {
+            background-color: #004c99 !important;
+            box-shadow: 0 4px 12px rgba(0, 76, 153, 0.2) !important;
         }
 
-        .submit-btn.dark-btn:hover {
-            background-color: #333;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-            color: #fff;
-        }
-        
-        .submit-btn.dark-btn span {
-            margin-left: 8px;
-            transition: transform 200ms ease;
-        }
-
-        .submit-btn.dark-btn:hover span {
-            transform: translateX(4px);
+        .submit-btn:hover {
+            background-color: #003d7a !important;
+            box-shadow: 0 6px 16px rgba(0, 76, 153, 0.3) !important;
         }
     </style>
 </head>
@@ -117,58 +160,77 @@
             <div class="container fade-up">
                 <div class="contact-page-header">
                     <h1>Contact Us</h1>
-                    <p>So we can help serve you better, please complete the form below.</p>
-                    <p style="margin-top: 16px; font-size: 14px; color: var(--text-muted);">Please note, due to the volume of inquiries, we cannot respond to everyone. Where we can, we will respond as soon as possible.</p>
+                    <div class="header-subtitles">
+                        <p>So we can help serve you better, please complete the form below.</p>
+                        <p style="margin-top: 16px; font-size: 14px; color: var(--text-muted);">Please note, due to the volume of inquiries, we cannot respond to everyone. Where we can, we will respond as soon as possible.</p>
+                    </div>
                 </div>
 
                 <div class="contact-form-wrapper">
                     <div data-fs-error style="color: red; margin-bottom: 16px; font-size: 14px;"></div>
                     <form id="contactForm" class="contact-form" style="max-width: 100%; margin-top: 0;">
-                        <fieldset>
-                            <legend>About you</legend>
-                            <div class="grid grid-2">
-                                <div class="form-group">
-                                    <label for="firstName">* First Name</label>
-                                    <input type="text" id="firstName" name="firstName" class="form-control" data-fs-field required>
+                        <div class="form-section">
+                            <div class="section-title">
+                                <h2>About you</h2>
+                            </div>
+                            <div class="section-fields">
+                                <div class="grid grid-2">
+                                    <div class="form-group">
+                                        <label for="firstName">* First Name</label>
+                                        <input type="text" id="firstName" name="firstName" class="form-control" data-fs-field required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName">* Last Name</label>
+                                        <input type="text" id="lastName" name="lastName" class="form-control" data-fs-field required>
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="lastName">* Last Name</label>
-                                    <input type="text" id="lastName" name="lastName" class="form-control" data-fs-field required>
+                                <div class="grid grid-2">
+                                    <div class="form-group">
+                                        <label for="email">* Email Address</label>
+                                        <input type="email" id="email" name="email" class="form-control" data-fs-field required>
+                                        <span data-fs-error="email" style="color: red; font-size: 13px;"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" class="form-control" data-fs-field>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="grid grid-2">
-                                <div class="form-group">
-                                    <label for="email">* Email Address</label>
-                                    <input type="email" id="email" name="email" class="form-control" data-fs-field required>
-                                    <span data-fs-error="email" style="color: red; font-size: 13px;"></span>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="form-control" data-fs-field>
-                                </div>
-                            </div>
-                        </fieldset>
+                        </div>
 
-                        <fieldset>
-                            <legend>About your business</legend>
-                            <div class="form-group">
-                                <label for="company">* Company Name</label>
-                                <input type="text" id="company" name="company" class="form-control" data-fs-field required>
+                        <div class="form-section">
+                            <div class="section-title">
+                                <h2>About your business</h2>
                             </div>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Your message</legend>
-                            <div class="form-group">
-                                <label for="message">* Message</label>
-                                <textarea id="message" name="message" class="form-control" rows="6" placeholder="Describe your reason for contacting Softmerise in 1,500 characters or less..." data-fs-field required></textarea>
-                                <span data-fs-error="message" style="color: red; font-size: 13px;"></span>
+                            <div class="section-fields">
+                                <div class="form-group">
+                                    <label for="company">* Company Name</label>
+                                    <input type="text" id="company" name="company" class="form-control" data-fs-field required>
+                                </div>
                             </div>
-                        </fieldset>
+                        </div>
 
-                        <button type="submit" class="submit-btn dark-btn" data-fs-submit-btn>Send <span>&rarr;</span></button>
+                        <div class="form-section" style="border-bottom: none; margin-bottom: 32px; padding-bottom: 0;">
+                            <div class="section-title">
+                                <h2>Your message</h2>
+                            </div>
+                            <div class="section-fields">
+                                <div class="form-group">
+                                    <label for="message">* Message</label>
+                                    <textarea id="message" name="message" class="form-control" rows="6" placeholder="Describe your reason for contacting Softmerise in 1,500 characters or less..." data-fs-field required></textarea>
+                                    <span data-fs-error="message" style="color: red; font-size: 13px;"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                            <div class="section-title"></div>
+                            <div class="section-fields" style="display: flex; justify-content: flex-start;">
+                                <button type="submit" class="submit-btn" data-fs-submit-btn style="margin-top: 0;">Send <span>&rarr;</span></button>
+                            </div>
+                        </div>
                         
-                        <div class="success-msg" data-fs-success style="border-color: #e5e5e5; background: #fafaf8; border-radius: 4px;">
+                        <div class="success-msg" data-fs-success style="border-color: #e5e5e5; background: #fafaf8; border-radius: 4px; margin-top: 24px;">
                             Thank you. We've received your message and will be in touch shortly.
                         </div>
                     </form>
