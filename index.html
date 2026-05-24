@@ -265,6 +265,7 @@
             border-bottom: none;
             padding-top: 120px;
             /* offset header */
+            text-align: center;
         }
 
         .hero::before {
@@ -286,14 +287,15 @@
             object-fit: cover;
             border-radius: 4px;
             margin-bottom: 40px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
             display: block;
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
         }
 
         .hero h1 {
             font-size: clamp(40px, 6vw, 72px);
             max-width: 900px;
-            margin-bottom: 24px;
+            margin: 0 auto 24px auto;
             font-weight: 500;
             letter-spacing: -0.02em;
             line-height: 1.1;
@@ -302,7 +304,7 @@
         .hero p {
             font-size: clamp(18px, 2vw, 20px);
             max-width: 600px;
-            margin-bottom: 0;
+            margin: 0 auto;
         }
 
         .read-more {
@@ -328,6 +330,68 @@
 
         .read-more:hover span {
             transform: translateX(4px);
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .hero-cta {
+            background-color: var(--accent);
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 36px;
+            border-radius: 4px;
+            transition: all 200ms ease;
+            box-shadow: 0 4px 12px rgba(0, 76, 153, 0.2);
+            text-decoration: none;
+        }
+
+        .hero-cta:hover {
+            background-color: #003d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 76, 153, 0.3);
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                height: auto;
+                align-items: flex-start;
+                padding-top: 64px; /* exact height of header, no extra space */
+                padding-bottom: 64px;
+            }
+            .hero-image {
+                max-height: 40vh;
+                margin-left: -24px;
+                margin-right: -24px;
+                width: calc(100% + 48px);
+                border-radius: 0;
+            }
+            .hero-actions {
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                gap: 16px;
+            }
+            .hero-cta {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            .read-more {
+                font-size: 14px;
+            }
+            .read-more span {
+                font-size: 18px;
+            }
         }
 
 
@@ -479,6 +543,13 @@
             font-style: italic;
             color: var(--text-muted);
             font-size: 15px;
+        }
+
+        .cta-title {
+            color: #ffffff;
+            font-size: clamp(32px, 6vw, 48px);
+            margin-bottom: 40px;
+            letter-spacing: -0.02em;
         }
 
         /* Contact */
@@ -716,7 +787,11 @@
                 <img src="hero.jpeg" alt="Hero Image" class="hero-image">
                 <h1>Operate more efficiently. Show up more effectively.</h1>
                 <p>We work with growing businesses to identify where they're losing time, clarity, or opportunity — and
-                    build simpler, smarter ways to move forward. <a href="#services" class="read-more">Read more <span>&rarr;</span></a></p>
+                    build simpler, smarter ways to move forward.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="hero-cta">LET'S GET TO WORK</a>
+                    <a href="#services" class="read-more" style="margin-left: 0;">Read more <span>&rarr;</span></a>
+                </div>
             </div>
         </section>
 
@@ -818,7 +893,7 @@
 
         <section id="contact" style="text-align: center;">
             <div class="container fade-up">
-                <h2 style="color: #ffffff; font-size: 48px; margin-bottom: 40px; letter-spacing: -0.02em;">What can we help you achieve?</h2>
+                <h2 class="cta-title">What can we help you achieve?</h2>
                 <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-flex; font-size: 14px; letter-spacing: 0.1em; padding: 16px 40px;">LET'S GET TO WORK</a>
             </div>
         </section>
