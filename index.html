@@ -363,22 +363,29 @@
 
         @media (max-width: 768px) {
             .hero {
+                height: 100vh;
                 min-height: 100vh;
-                height: auto;
-                align-items: center;
-                padding-top: 120px;
-                padding-bottom: 72px;
+                padding-top: 100px;
+                padding-bottom: 0;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+            }
+
+            .hero .container {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
             }
 
             .hero-image {
-                max-height: 40vh;
+                margin-top: auto;
+                margin-bottom: 0;
                 margin-left: -24px;
                 margin-right: -24px;
                 width: calc(100% + 48px);
+                height: 55vh;
                 border-radius: 0;
+                object-position: center bottom;
             }
 
             .hero-actions {
