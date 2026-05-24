@@ -1,47 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Primary Meta Tags -->
-    <title>Softmerise | AI-Native Consulting & Strategy</title>
-    <meta name="title" content="Softmerise | AI-Native Consulting & Strategy">
-    <meta name="description"
-        content="Softmerise is an AI-native consulting company that helps growing businesses operate more efficiently and show up more effectively. We build simpler, smarter ways to move forward.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://softmerise.com/">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://softmerise.com/">
-    <meta property="og:title" content="Softmerise | AI-Native Consulting & Strategy">
-    <meta property="og:description"
-        content="Softmerise is an AI-native consulting company that helps growing businesses operate more efficiently and show up more effectively.">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://softmerise.com/">
-    <meta property="twitter:title" content="Softmerise | AI-Native Consulting & Strategy">
-    <meta property="twitter:description"
-        content="Softmerise is an AI-native consulting company that helps growing businesses operate more efficiently and show up more effectively.">
-
-    <!-- Icons -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
-    <style>
         :root {
             --bg-color: #FAFAF8;
             --text-dark: #111111;
             --text-body: #444444;
             --text-muted: #888888;
-            --accent:#004c99;
-            /* subtle tech blue */
+            --accent: #0075de; /* subtle tech blue */
             --border-light: #E5E5E5;
             --font-inter: 'Inter', sans-serif;
             --container-width: 1100px;
@@ -67,12 +29,7 @@
             color: var(--text-body);
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6 {
             color: var(--text-dark);
             font-weight: 600;
             letter-spacing: -0.02em;
@@ -131,9 +88,7 @@
         }
 
         @media (max-width: 768px) {
-
-            .grid-3,
-            .grid-2 {
+            .grid-3, .grid-2 {
                 grid-template-columns: 1fr;
             }
         }
@@ -241,16 +196,12 @@
         }
 
         @media (max-width: 768px) {
-
-            .nav-links,
-            .nav-cta.desktop {
+            .nav-links, .nav-cta.desktop {
                 display: none;
             }
-
             .hamburger {
                 display: block;
             }
-
             .mobile-nav .nav-link {
                 font-size: 24px;
             }
@@ -263,8 +214,7 @@
             align-items: center;
             position: relative;
             border-bottom: none;
-            padding-top: 120px;
-            /* offset header */
+            padding-top: 64px; /* offset header */
         }
 
         .hero::before {
@@ -282,7 +232,7 @@
 
         .hero-image {
             width: 100%;
-            max-height: 45vh;
+            max-height: 500px;
             object-fit: cover;
             border-radius: 4px;
             margin-bottom: 40px;
@@ -302,31 +252,35 @@
         .hero p {
             font-size: clamp(18px, 2vw, 20px);
             max-width: 600px;
-            margin-bottom: 0;
+            margin-bottom: 40px;
         }
 
-        .read-more {
+        .hero-cta {
+            background-color: var(--accent);
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 16px;
             display: inline-flex;
             align-items: center;
-            font-weight: 500;
-            color: var(--accent);
-            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 4px;
+            transition: all 200ms ease;
+            box-shadow: 0 4px 12px rgba(0, 117, 222, 0.2);
+        }
+
+        .hero-cta:hover {
+            background-color: #0062ba;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 117, 222, 0.3);
+            color: #ffffff;
+        }
+
+        .hero-cta span {
             margin-left: 8px;
-            transition: color 200ms ease;
-        }
-
-        .read-more:hover {
-            color: #002244;
-        }
-
-        .read-more span {
-            margin-left: 6px;
-            font-size: 22px;
-            line-height: 1;
             transition: transform 200ms ease;
         }
 
-        .read-more:hover span {
+        .hero-cta:hover span {
             transform: translateX(4px);
         }
 
@@ -341,7 +295,7 @@
         }
 
         .card {
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0,0,0,0.08);
             padding: 32px;
             border-radius: 4px;
             transition: background-color 200ms ease, border-color 200ms ease;
@@ -349,7 +303,7 @@
 
         .card:hover {
             background-color: #fff;
-            border-color: rgba(0, 0, 0, 0.12);
+            border-color: rgba(0,0,0,0.12);
         }
 
         .card-icon {
@@ -395,7 +349,7 @@
             font-size: 20px;
             margin-bottom: 8px;
         }
-
+        
         .process-content p {
             font-size: 16px;
         }
@@ -405,13 +359,11 @@
                 flex-direction: row;
                 gap: 24px;
             }
-
             .process-item {
                 flex-direction: column;
                 gap: 16px;
                 flex: 1;
             }
-
             .process-item::before {
                 content: "";
                 position: absolute;
@@ -421,7 +373,6 @@
                 height: 1px;
                 background-color: var(--border-light);
             }
-
             .process-item:last-child::before {
                 display: none;
             }
@@ -483,9 +434,10 @@
 
         /* Contact */
         #contact {
-            background-color: #004c99; /* darker blue */
+            background-color: #050505;
             color: #ffffff;
             border-bottom: none;
+            padding: 120px 0;
         }
 
         #contact .label {
@@ -531,7 +483,7 @@
             font-size: 40px;
             margin-bottom: 16px;
         }
-
+        
         .contact-header p {
             font-size: 18px;
         }
@@ -596,7 +548,7 @@
             box-shadow: 0 6px 16px rgba(0, 117, 222, 0.3);
             color: #ffffff;
         }
-
+        
         .submit-btn span {
             margin-left: 8px;
             transition: transform 200ms ease;
@@ -640,17 +592,14 @@
             color: #ffffff;
         }
 
-        .footer-top,
-        .footer-bottom {
+        .footer-top, .footer-bottom {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         @media (max-width: 768px) {
-
-            .footer-top,
-            .footer-bottom {
+            .footer-top, .footer-bottom {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 24px;
@@ -660,18 +609,18 @@
         .footer-top {
             margin-bottom: 64px;
         }
-
+        
         .footer-nav {
             display: flex;
             gap: 32px;
         }
-
+        
         .footer-nav a {
             font-size: 14px;
             color: #aaaaaa;
             transition: color 200ms ease;
         }
-
+        
         .footer-nav a:hover {
             color: #ffffff;
         }
@@ -680,220 +629,3 @@
             font-size: 13px;
             color: var(--text-muted);
         }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="wordmark">Softmerise</a>
-
-            <nav class="nav-links">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">What We Do</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </nav>
-
-            <a href="#contact" class="nav-cta desktop">Let's Talk</a>
-
-            <button class="hamburger" aria-label="Toggle menu">
-                ☰
-            </button>
-        </div>
-
-        <nav class="mobile-nav">
-            <a href="#about" class="nav-link mobile-link">About</a>
-            <a href="#services" class="nav-link mobile-link">What We Do</a>
-            <a href="#contact" class="nav-link mobile-link">Contact</a>
-            <a href="#contact" class="nav-cta" style="margin-top: 24px; justify-content: center;">Let's Talk</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero" id="home">
-            <div class="container fade-up">
-                <img src="hero.jpeg" alt="Hero Image" class="hero-image">
-                <h1>Operate more efficiently. Show up more effectively.</h1>
-                <p>We work with growing businesses to identify where they're losing time, clarity, or opportunity — and
-                    build simpler, smarter ways to move forward. <a href="#services" class="read-more">Read more <span>&rarr;</span></a></p>
-            </div>
-        </section>
-
-
-
-        <section id="services">
-            <div class="container fade-up">
-                <span class="label">What We Do</span>
-                <p class="intro-line">We focus on the work that matters, removing friction so you can focus on the
-                    business itself.</p>
-
-                <div class="grid grid-3">
-                    <div class="card">
-                        <span class="card-icon">01</span>
-                        <h3>AI-Native Development</h3>
-                        <p>From internal tooling to customer-facing applications, we leverage AI to craft scalable
-                            solutions that moves ideas from vision to reality with less friction.</p>
-                    </div>
-                    <div class="card">
-                        <span class="card-icon">02</span>
-                        <h3>Workflow Automation</h3>
-                        <p>Manual processes create drag. We identify automation opportunities and transform repetitive
-                            workflows into automated systems that improve speed, consistency, and execution.</p>
-                    </div>
-                    <div class="card">
-                        <span class="card-icon">03</span>
-                        <h3>Technology Consulting</h3>
-                        <p>The right direction matters as much as execution. We help teams make better technology
-                            decisions, reduce unnecessary complexity, and move forward with better clarity.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="process">
-            <div class="container fade-up">
-                <span class="label">How We Work</span>
-
-                <div class="process-list">
-                    <div class="process-item">
-                        <span class="process-num">01</span>
-                        <div class="process-content">
-                            <h3>We listen first</h3>
-                            <p>No assumptions. We spend time understanding your specific constraints, goals, and the
-                                reality of your current operations.</p>
-                        </div>
-                    </div>
-                    <div class="process-item">
-                        <span class="process-num">02</span>
-                        <div class="process-content">
-                            <h3>Think before building</h3>
-                            <p>We map out the simplest, highest-leverage solution. Strategy always precedes execution to
-                                prevent wasted effort.</p>
-                        </div>
-                    </div>
-                    <div class="process-item">
-                        <span class="process-num">03</span>
-                        <div class="process-content">
-                            <h3>Execution With You</h3>
-                            <p>We don't just hand over a deck. We work alongside your team to ensure the ideas actually
-                                translate into working reality.</p>
-                        </div>
-                    </div>
-                    <div class="process-item">
-                        <span class="process-num">04</span>
-                        <div class="process-content">
-                            <h3>Measure what matters</h3>
-                            <p>We establish clear signals of success. If it doesn't move the needle on efficiency or
-                                clarity, we iterate until it does.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container fade-up">
-                <span class="label">About</span>
-
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>Softmerise exists because most businesses are bogged down by tools and processes that were
-                            supposed to make them faster. We saw a gap between high-level strategy that lacks execution
-                            and dev shops that build without thinking. We sit in the middle. We're here to give growing
-                            companies the clarity and the technical capability they need to operate like the best in
-                            their class. No jargon, no unnecessary overhead—just smart people solving hard problems
-                            alongside you.</p>
-                    </div>
-                    <div class="beliefs">
-                        <div class="belief-item">Simplicity is a competitive advantage.</div>
-                        <div class="belief-item">Technology should serve the business, not the other way around.</div>
-                        <div class="belief-item">Good execution covers a multitude of sins.</div>
-                        <div class="belief-item">Clarity is kindness.</div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="contact" style="text-align: center;">
-            <div class="container fade-up">
-                <h2 style="color: #ffffff; font-size: 48px; margin-bottom: 40px; letter-spacing: -0.02em;">What can we help you achieve?</h2>
-                <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-flex; font-size: 14px; letter-spacing: 0.1em; padding: 16px 40px;">LET'S GET TO WORK</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-top">
-                <div class="wordmark">Softmerise</div>
-                <div class="footer-nav">
-                    <a href="#about">About</a>
-                    <a href="#services">What We Do</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
-                    <span>&copy; 2025 Softmerise. All rights reserved.</span>
-                    <a href="https://x.com/softmerise" target="_blank" rel="noopener noreferrer"
-                        style="transition: color 200ms ease;" onmouseover="this.style.color='#000'"
-                        onmouseout="this.style.color=''">X (Twitter)</a>
-                    <a href="https://linkedin.com/company/softmerise" target="_blank" rel="noopener noreferrer"
-                        style="transition: color 200ms ease;" onmouseover="this.style.color='#000'"
-                        onmouseout="this.style.color=''">LinkedIn</a>
-                </div>
-                <div>Quietly building better businesses.</div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-
-        function toggleMenu() {
-            mobileNav.classList.toggle('open');
-            if (mobileNav.classList.contains('open')) {
-                hamburger.textContent = '✕';
-            } else {
-                hamburger.textContent = '☰';
-            }
-        }
-
-        hamburger.addEventListener('click', toggleMenu);
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (mobileNav.classList.contains('open')) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        // Intersection Observer for fade-up animations
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.15
-        };
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-up').forEach(element => {
-            observer.observe(element);
-        });
-    </script>
-</body>
-
-</html>
