@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Softmerise | AI-Native Consulting & Strategy</title>
+    <meta name="title" content="Softmerise | AI-Native Consulting & Strategy">
+    <meta name="description" content="Softmerise is an AI-native consulting company that helps growing businesses operate more efficiently and show up more effectively. We build simpler, smarter ways to move forward.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://softmerise.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://softmerise.com/">
+    <meta property="og:title" content="Softmerise | AI-Native Consulting & Strategy">
+    <meta property="og:description" content="Softmerise is an AI-native consulting company that helps growing businesses operate more efficiently and show up more effectively.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://softmerise.com/">
+    <meta property="twitter:title" content="Softmerise | AI-Native Consulting & Strategy">
+    <meta property="twitter:description" content="Softmerise is an AI-native consulting company that helps growing businesses operate more efficiently and show up more effectively.">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FAFAF8;
+            --text-dark: #111111;
+            --text-body: #444444;
+            --text-muted: #888888;
+            --accent: #0075de; /* subtle tech blue */
+            --border-light: #E5E5E5;
+            --font-inter: 'Inter', sans-serif;
+            --container-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: var(--font-inter);
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+        }
+
+        body {
+            line-height: 1.75;
+            font-size: 16px;
+            overflow-x: hidden;
+            color: var(--text-body);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-dark);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 120px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 72px 0;
+            }
+        }
+
+        .label {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: 768px) {
+            .grid-3, .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 500ms ease-out, transform 500ms ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Nav */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(250, 250, 248, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(229, 229, 229, 0.5);
+            z-index: 100;
+            height: 64px;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wordmark {
+            font-weight: 600;
+            font-size: 28px;
+            color: var(--text-dark);
+            letter-spacing: -0.03em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 48px;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            font-weight: 450;
+            color: #555;
+            transition: color 200ms ease;
+        }
+
+        .nav-link:hover {
+            color: #000;
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            font-size: 14px;
+            padding: 10px 24px;
+            background-color: var(--text-dark);
+            color: #ffffff;
+            border-radius: 4px;
+            transition: all 200ms ease;
+            font-weight: 500;
+        }
+
+        .nav-cta:hover {
+            background-color: #333333;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            color: #ffffff;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-dark);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 64px);
+            background-color: var(--bg-color);
+            flex-direction: column;
+            padding: 48px 24px;
+            gap: 32px;
+            z-index: 99;
+        }
+
+        .mobile-nav.open {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links, .nav-cta.desktop {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .mobile-nav .nav-link {
+                font-size: 24px;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            border-bottom: none;
+            padding-top: 64px; /* offset header */
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#000 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.03;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            max-width: 900px;
+            margin-bottom: 24px;
+            font-weight: 650;
+        }
+
+        .hero p {
+            font-size: clamp(18px, 2vw, 20px);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .hero-cta {
+            background-color: var(--accent);
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            padding: 16px 36px;
+            border-radius: 4px;
+            transition: all 200ms ease;
+            box-shadow: 0 4px 12px rgba(0, 117, 222, 0.2);
+        }
+
+        .hero-cta:hover {
+            background-color: #0062ba;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 117, 222, 0.3);
+            color: #ffffff;
+        }
+
+        .hero-cta span {
+            margin-left: 8px;
+            transition: transform 200ms ease;
+        }
+
+        .hero-cta:hover span {
+            transform: translateX(4px);
+        }
+
+        /* Marquee */
+        .marquee-section {
+            padding: 0;
+            border-bottom: none;
+        }
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 16px 0;
+            display: flex;
+        }
+
+        .marquee-content {
+            display: flex;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-item {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #AAAAAA;
+            margin-right: 32px;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .marquee-item::after {
+            content: "·";
+            margin-left: 32px;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* What We Do */
+        .intro-line {
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 64px;
+            color: var(--text-dark);
+        }
+
+        .card {
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 32px;
+            border-radius: 4px;
+            transition: background-color 200ms ease, border-color 200ms ease;
+        }
+
+        .card:hover {
+            background-color: #fff;
+            border-color: rgba(0,0,0,0.12);
+        }
+
+        .card-icon {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 15px;
+        }
+
+        /* How We Work */
+        .process-list {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .process-item {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            position: relative;
+        }
+
+        .process-num {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            width: 24px;
+            flex-shrink: 0;
+        }
+
+        .process-content h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .process-content p {
+            font-size: 16px;
+        }
+
+        @media (min-width: 768px) {
+            .process-list {
+                flex-direction: row;
+                gap: 24px;
+            }
+            .process-item {
+                flex-direction: column;
+                gap: 16px;
+                flex: 1;
+            }
+            .process-item::before {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: 48px;
+                right: 0;
+                height: 1px;
+                background-color: var(--border-light);
+            }
+            .process-item:last-child::before {
+                display: none;
+            }
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        .about-text p {
+            font-size: 22px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .beliefs {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .belief-item {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border-light);
+            font-weight: 500;
+            font-size: 18px;
+            color: var(--text-dark);
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .belief-item::before {
+            content: "✦";
+            color: var(--accent);
+            margin-right: 16px;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+
+        .closing-thought {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* Contact */
+        .contact-header h2 {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+        
+        .contact-header p {
+            font-size: 18px;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin-top: 48px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-control {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border-light);
+            padding: 12px 0;
+            font-family: inherit;
+            font-size: 16px;
+            color: var(--text-dark);
+            transition: border-color 200ms ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-bottom-color: var(--accent);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--accent);
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 16px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: 4px;
+            transition: all 200ms ease;
+            border: none;
+            margin-top: 16px;
+            box-shadow: 0 4px 12px rgba(0, 117, 222, 0.2);
+        }
+
+        .submit-btn:hover {
+            background-color: #0062ba;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 117, 222, 0.3);
+            color: #ffffff;
+        }
+        
+        .submit-btn span {
+            margin-left: 8px;
+            transition: transform 200ms ease;
+        }
+
+        .submit-btn:hover span {
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .submit-btn {
+                width: 100%;
+            }
+        }
+
+        .fallback-email {
+            margin-top: 32px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .success-msg {
+            display: none;
+            margin-top: 24px;
+            padding: 16px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            color: var(--text-dark);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #F5F5F3;
+            padding: 64px 0 32px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-top, .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top, .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+        }
+
+        .footer-top {
+            margin-bottom: 64px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .footer-nav a {
+            font-size: 14px;
+            color: #555;
+            transition: color 200ms ease;
+        }
+        
+        .footer-nav a:hover {
+            color: #000;
+        }
+
+        .footer-bottom {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="wordmark">Softmerise</a>
+            
+            <nav class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">What We Do</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <a href="#contact" class="nav-cta desktop">Let's Talk</a>
+
+            <button class="hamburger" aria-label="Toggle menu">
+                ☰
+            </button>
+        </div>
+
+        <nav class="mobile-nav">
+            <a href="#about" class="nav-link mobile-link">About</a>
+            <a href="#services" class="nav-link mobile-link">What We Do</a>
+            <a href="#contact" class="nav-link mobile-link">Contact</a>
+            <a href="#contact" class="nav-cta" style="margin-top: 24px; justify-content: center;">Let's Talk</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container fade-up">
+                <h1>Operate more efficiently. Show up more effectively.</h1>
+                <p>We work with growing businesses to identify where they're losing time, clarity, or opportunity — and build simpler, smarter ways to move forward.</p>
+                <a href="#contact" class="hero-cta">Start a Conversation <span>&rarr;</span></a>
+            </div>
+        </section>
+
+        <section class="marquee-section fade-up">
+            <div class="marquee-container">
+                <div class="marquee-content" aria-hidden="true">
+                    <!-- Repeated items for smooth infinite scroll -->
+                    <span class="marquee-item">Thinking-led</span>
+                    <span class="marquee-item">Execution-capable</span>
+                    <span class="marquee-item">Clarity first</span>
+                    <span class="marquee-item">Zero fluff</span>
+                    <span class="marquee-item">AI-native</span>
+                    <span class="marquee-item">Simpler is better</span>
+                    
+                    <span class="marquee-item">Thinking-led</span>
+                    <span class="marquee-item">Execution-capable</span>
+                    <span class="marquee-item">Clarity first</span>
+                    <span class="marquee-item">Zero fluff</span>
+                    <span class="marquee-item">AI-native</span>
+                    <span class="marquee-item">Simpler is better</span>
+                    
+                    <span class="marquee-item">Thinking-led</span>
+                    <span class="marquee-item">Execution-capable</span>
+                    <span class="marquee-item">Clarity first</span>
+                    <span class="marquee-item">Zero fluff</span>
+                    <span class="marquee-item">AI-native</span>
+                    <span class="marquee-item">Simpler is better</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container fade-up">
+                <span class="label">What We Do</span>
+                <p class="intro-line">We focus on the work that matters, removing friction so you can focus on the business itself.</p>
+                
+                <div class="grid grid-3">
+                    <div class="card">
+                        <span class="card-icon">01</span>
+                        <h3>AI-Native Development</h3>
+                        <p>From internal tooling to customer-facing applications, we leverage AI to craft scalable solutions that moves ideas from vision to reality with less friction.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">02</span>
+                        <h3>Workflow Automation</h3>
+                        <p>Manual processes create drag. We identify automation opportunities and transform repetitive workflows into automated systems that improve speed, consistency, and execution.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-icon">03</span>
+                        <h3>Technology Consulting</h3>
+                        <p>The right direction matters as much as execution. We help teams make better technology decisions, reduce unnecessary complexity, and move forward with better clarity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="process">
+            <div class="container fade-up">
+                <span class="label">How We Work</span>
+                
+                <div class="process-list">
+                    <div class="process-item">
+                        <span class="process-num">01</span>
+                        <div class="process-content">
+                            <h3>We listen first</h3>
+                            <p>No assumptions. We spend time understanding your specific constraints, goals, and the reality of your current operations.</p>
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <span class="process-num">02</span>
+                        <div class="process-content">
+                            <h3>Think before building</h3>
+                            <p>We map out the simplest, highest-leverage solution. Strategy always precedes execution to prevent wasted effort.</p>
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <span class="process-num">03</span>
+                        <div class="process-content">
+                            <h3>Stay close during execution</h3>
+                            <p>We don't just hand over a deck. We work alongside your team to ensure the ideas actually translate into working reality.</p>
+                        </div>
+                    </div>
+                    <div class="process-item">
+                        <span class="process-num">04</span>
+                        <div class="process-content">
+                            <h3>Measure what matters</h3>
+                            <p>We establish clear signals of success. If it doesn't move the needle on efficiency or clarity, we iterate until it does.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container fade-up">
+                <span class="label">About</span>
+                
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p>Softmerise exists because most businesses are bogged down by tools and processes that were supposed to make them faster. We saw a gap between high-level strategy that lacks execution and dev shops that build without thinking. We sit in the middle. We're here to give growing companies the clarity and the technical capability they need to operate like the best in their class. No jargon, no unnecessary overhead—just smart people solving hard problems alongside you.</p>
+                    </div>
+                    <div class="beliefs">
+                        <div class="belief-item">Simplicity is a competitive advantage.</div>
+                        <div class="belief-item">Technology should serve the business, not the other way around.</div>
+                        <div class="belief-item">Good execution covers a multitude of sins.</div>
+                        <div class="belief-item">Clarity is kindness.</div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container fade-up">
+                <div class="contact-header">
+                    <span class="label">Let's Talk</span>
+                    <h2>Start a conversation.</h2>
+                    <p>Tell us where you're feeling friction. Expect a real conversation, no pitch decks, just clarity.</p>
+                </div>
+
+                <div data-fs-error style="color: red; margin-bottom: 16px; font-size: 14px;"></div>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" data-fs-field required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" class="form-control" data-fs-field required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" data-fs-field required>
+                        <span data-fs-error="email" style="color: red; font-size: 13px;"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">What are you looking to solve?</label>
+                        <textarea id="message" name="message" class="form-control" rows="4" data-fs-field required></textarea>
+                        <span data-fs-error="message" style="color: red; font-size: 13px;"></span>
+                    </div>
+                    <button type="submit" class="submit-btn" data-fs-submit-btn>Send <span>&rarr;</span></button>
+                    
+                    <div class="success-msg" data-fs-success>
+                        Thank you. We've received your message and will be in touch shortly.
+                    </div>
+                </form>
+
+                <p class="fallback-email">Or email us directly at <a href="mailto:softmerise@gmail.com" style="text-decoration: underline;">softmerise@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="wordmark">Softmerise</div>
+                <div class="footer-nav">
+                    <a href="#about">About</a>
+                    <a href="#services">What We Do</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div style="display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+                    <span>&copy; 2025 Softmerise. All rights reserved.</span>
+                    <a href="https://x.com/softmerise" target="_blank" rel="noopener noreferrer" style="transition: color 200ms ease;" onmouseover="this.style.color='#000'" onmouseout="this.style.color=''">X (Twitter)</a>
+                    <a href="https://linkedin.com/company/softmerise" target="_blank" rel="noopener noreferrer" style="transition: color 200ms ease;" onmouseover="this.style.color='#000'" onmouseout="this.style.color=''">LinkedIn</a>
+                </div>
+                <div>Quietly building better businesses.</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileNav.classList.toggle('open');
+            if (mobileNav.classList.contains('open')) {
+                hamburger.textContent = '✕';
+            } else {
+                hamburger.textContent = '☰';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileNav.classList.contains('open')) {
+                    toggleMenu();
+                }
+            });
+        });
+
+        // Intersection Observer for fade-up animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Form Handling - Formspree Ajax SDK
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#contactForm', formId: 'xkoezala' });
+    </script>
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
