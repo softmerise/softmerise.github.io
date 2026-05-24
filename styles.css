@@ -155,7 +155,7 @@
             align-items: center;
             font-size: 14px;
             padding: 10px 24px;
-            background-color: var(--text-dark);
+            background-color: #004c99;
             color: #ffffff;
             border-radius: 4px;
             transition: all 200ms ease;
@@ -163,9 +163,9 @@
         }
 
         .nav-cta:hover {
-            background-color: #333333;
+            background-color: #003d7a;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 76, 153, 0.2);
             color: #ffffff;
         }
 
