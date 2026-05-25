@@ -401,16 +401,17 @@
                 align-items: center;
                 justify-content: center;
                 gap: 12px;
+                margin-bottom: 40px;
             }
 
             .hero-cta,
             .read-more {
-                padding: 12px 16px;
-                font-size: 14px;
+                padding: clamp(10px, 3vw, 12px) clamp(12px, 4vw, 16px);
+                font-size: clamp(12px, 3.5vw, 14px);
             }
 
             .read-more span {
-                font-size: 18px;
+                font-size: clamp(16px, 4.5vw, 18px);
                 top: 0;
             }
         }
