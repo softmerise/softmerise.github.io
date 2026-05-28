@@ -560,50 +560,42 @@
         }
 
         /* About */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 64px;
-            margin-bottom: 80px;
-            align-items: center;
+        #about {
+            text-align: center;
         }
 
-        @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-bottom: 80px;
+        }
+
+        #about .card {
+            text-align: left;
+        }
+
+        #about .card a {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 16px;
+            transition: color 200ms ease;
+        }
+
+        #about .card a:hover {
+            color: #0062ba;
         }
 
         .about-text p {
-            font-size: 22px;
-            line-height: 1.6;
-            color: var(--text-dark);
-        }
-
-        .beliefs {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            border-top: 1px solid var(--border-light);
-        }
-
-        .belief-item {
-            padding: 24px 0;
-            border-bottom: 1px solid var(--border-light);
-            font-weight: 500;
             font-size: 18px;
+            line-height: 1.7;
             color: var(--text-dark);
-            display: flex;
-            align-items: flex-start;
+            margin-bottom: 24px;
         }
 
-        .belief-item::before {
-            content: "✦";
-            color: var(--accent);
-            margin-right: 16px;
-            font-size: 14px;
-            margin-top: 4px;
+        .about-text p:last-child {
+            margin-bottom: 0;
         }
 
         .closing-thought {
@@ -954,7 +946,12 @@
 
         <section id="process">
             <div class="container fade-up">
-                <span class="label">How We Work</span>
+                <span class="label">Our Approach</span>
+                <p class="intro-line">
+                    There’s no shortcut. It takes strategy, technology, and people moving together.
+                </p>
+
+                
 
                 <div class="process-list">
                     <div class="process-item">
@@ -995,22 +992,34 @@
 
         <section id="about">
             <div class="container fade-up">
-                <span class="label">About</span>
+                <span class="label">Who we are</span>
 
-                <div class="about-grid">
-                    <div class="about-text">
-                        <p>Softmerise exists because most businesses are bogged down by tools and processes that were
-                            supposed to make them faster. We saw a gap between high-level strategy that lacks execution
-                            and dev shops that build without thinking. We sit in the middle. We're here to give growing
-                            companies the clarity and the technical capability they need to operate like the best in
-                            their class. No jargon, no unnecessary overhead, just smart people solving hard problems
-                            alongside you.</p>
+                <div class="about-text">
+                        <p>
+                            Softmerise is an AI-native technology company helping growing businesses operate smarter through intelligent automation, modern software systems, and strategic technology consulting.
+                        </p>
+                        <p>
+                            At Softmerise, we believe technology should reduce friction, improve decision-making, and help businesses move faster with confidence.
+                        </p>
+                </div>
+
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>Our people & leadership</h3>
+                        <p>We are defined by our people and are deeply committed to creating a diverse and inclusive culture.</p>
                     </div>
-                    <div class="beliefs">
-                        <div class="belief-item">Simplicity is a competitive advantage.</div>
-                        <div class="belief-item">Technology should serve the business, not the other way around.</div>
-                        <div class="belief-item">Good execution covers a multitude of sins.</div>
-                        <div class="belief-item">Clarity is kindness.</div>
+                    <div class="card">
+                        <h3>Purpose, mission & values</h3>
+                        <p>See the guiding principles that inform our long-term strategy as well as how we serve our clients.</p>
+                        
+                    </div>
+                    <div class="card">
+                        <h3>Our aspiration</h3>
+                        <p>We help clients pursue sustainability, inclusion, and growth, all at the same time.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our governance</h3>
+                        <p>We are a values-driven organization and work to meet the highest professional and ethical standards.</p>
                     </div>
                 </div>
 
@@ -1034,7 +1043,7 @@
                 <div class="footer-nav">
                     <a href="#about">Who We Are</a>
                     <a href="#services">What We Do</a>
-                    <a href="#process">How We Work</a>
+                    <a href="#process">Our Approach</a>
                 </div>
                 <div class="social-icons">
                     <a href="https://x.com/softmerise" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
