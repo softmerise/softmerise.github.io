@@ -159,7 +159,7 @@
 
         .label {
             display: inline-block;
-            font-size: 11px;
+            font-size: 15px;
             font-weight: 600;
             letter-spacing: 0.12em;
             text-transform: uppercase;
@@ -567,31 +567,11 @@
         }
 
         /* About */
-        #about {
-            text-align: center;
-        }
-
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto;
-            margin-bottom: 80px;
-        }
-
-        #about .card {
-            text-align: left;
-        }
-
-        #about .card a {
-            color: var(--accent);
-            font-weight: 500;
-            font-size: 14px;
-            display: inline-block;
-            margin-top: 16px;
-            transition: color 200ms ease;
-        }
-
-        #about .card a:hover {
-            color: #0062ba;
+        .about-grid {
+            align-items: center;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 48px;
+            margin-top: 2px;
         }
 
         .about-text p {
@@ -603,6 +583,26 @@
 
         .about-text p:last-child {
             margin-bottom: 0;
+        }
+
+        .about-image-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
         }
 
         .closing-thought {
@@ -953,6 +953,25 @@
             </div>
         </section>
 
+        <section id="about">
+            <div class="container fade-up">
+                <span class="label">Who we are</span>
+                <div class="grid grid-2 about-grid">
+                    <div class="about-text">
+                        <p>
+                            Softmerise is an AI-native technology company helping growing businesses operate smarter through intelligent automation, modern software systems, and strategic technology consulting.
+                        </p>
+                        <p>
+                            At Softmerise, we believe technology should reduce friction, improve decision-making, and help businesses move faster with confidence.
+                        </p>
+                    </div>
+                    <div class="about-image-wrapper">
+                        <img src="What-is-Technology-Consulting-1.jpg" alt="About Softmerise" class="about-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="process">
             <div class="container fade-up">
                 <span class="label">Our Approach</span>
@@ -999,21 +1018,7 @@
             </div>
         </section>
 
-        <section id="about">
-            <div class="container fade-up">
-                <span class="label">Who we are</span>
-
-                <div class="about-text">
-                        <p>
-                            Softmerise is an AI-native technology company helping growing businesses operate smarter through intelligent automation, modern software systems, and strategic technology consulting.
-                        </p>
-                        <p>
-                            At Softmerise, we believe technology should reduce friction, improve decision-making, and help businesses move faster with confidence.
-                        </p>
-                </div>
-
-            </div>
-        </section>
+        
 
         <section id="contact" style="text-align: center;">
             <div class="container fade-up">
@@ -1043,7 +1048,7 @@
             </div>
             <div class="footer-bottom">
                 <div class="copyright-section">
-                    <span>&copy; 2025 Softmerise. All rights reserved.</span>
+                    <span>&copy; 2026 Softmerise. All rights reserved.</span>
                 </div>
                 <div class="policy-links">
                     <a href="#">Terms of Use</a>
