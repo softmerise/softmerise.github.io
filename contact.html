@@ -223,7 +223,10 @@
                 <!-- <a href="https://medium.com" class="nav-link">Insights</a> -->
             </nav>
             <a href="contact.html" class="nav-cta desktop">Let's Talk</a>
-            <button class="hamburger" aria-label="Toggle menu">☰</button>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
         </div>
         <nav class="mobile-nav">
             <a href="index.html#about" class="nav-link mobile-link">Who We Are</a>
@@ -368,11 +371,7 @@
 
         function toggleMenu() {
             mobileNav.classList.toggle('open');
-            if (mobileNav.classList.contains('open')) {
-                hamburger.textContent = '✕';
-            } else {
-                hamburger.textContent = '☰';
-            }
+            hamburger.classList.toggle('open');
         }
 
         hamburger.addEventListener('click', toggleMenu);

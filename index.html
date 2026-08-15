@@ -268,8 +268,34 @@
             display: none;
             background: none;
             border: none;
-            font-size: 24px;
-            color: var(--text-dark);
+            padding: 8px 0;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            z-index: 101;
+        }
+
+        .menu-line {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-dark);
+            border-radius: 1.5px;
+            transition: transform 250ms ease, opacity 250ms ease;
+            transform-origin: center;
+        }
+
+        .hamburger.open .menu-line:nth-child(1) {
+            transform: translateY(4.375px) rotate(45deg);
+        }
+
+        .hamburger.open .menu-line:nth-child(2) {
+            transform: translateY(-4.375px) rotate(-45deg);
         }
 
         .mobile-nav {
@@ -299,7 +325,7 @@
             }
 
             .hamburger {
-                display: block;
+                display: flex;
             }
 
             .mobile-nav .nav-link {
@@ -421,7 +447,7 @@
 
         @media (max-width: 768px) {
             .wordmark {
-                font-size: 22px;
+                font-size: 23px;
                 font-weight: 600;
                 letter-spacing: -0.03em;
             }
@@ -923,7 +949,8 @@
             <a href="#contact" class="nav-cta desktop">Let's Talk</a>
 
             <button class="hamburger" aria-label="Toggle menu">
-                ☰
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
             </button>
         </div>
 
@@ -1099,11 +1126,7 @@
 
         function toggleMenu() {
             mobileNav.classList.toggle('open');
-            if (mobileNav.classList.contains('open')) {
-                hamburger.textContent = '✕';
-            } else {
-                hamburger.textContent = '☰';
-            }
+            hamburger.classList.toggle('open');
         }
 
         hamburger.addEventListener('click', toggleMenu);

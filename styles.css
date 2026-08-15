@@ -174,8 +174,34 @@
             display: none;
             background: none;
             border: none;
-            font-size: 24px;
-            color: var(--text-dark);
+            padding: 8px 0;
+            cursor: pointer;
+            width: 30px;
+            height: 24px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            position: relative;
+            z-index: 101;
+        }
+
+        .menu-line {
+            display: block;
+            width: 30px;
+            height: 1.75px;
+            background-color: var(--text-dark);
+            border-radius: 1px;
+            transition: transform 250ms ease, opacity 250ms ease;
+            transform-origin: center;
+        }
+
+        .hamburger.open .menu-line:nth-child(1) {
+            transform: translateY(4.375px) rotate(45deg);
+        }
+
+        .hamburger.open .menu-line:nth-child(2) {
+            transform: translateY(-4.375px) rotate(-45deg);
         }
 
         .mobile-nav {
@@ -202,7 +228,7 @@
                 display: none;
             }
             .hamburger {
-                display: block;
+                display: flex;
             }
             .mobile-nav .nav-link {
                 font-size: 24px;
