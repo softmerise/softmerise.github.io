@@ -421,9 +421,9 @@
 
         @media (max-width: 768px) {
             .hero {
-                height: auto;
                 min-height: 100vh;
-                padding-top: 100px;
+                min-height: 100svh;
+                padding-top: 64px;
                 padding-bottom: 0;
                 display: flex;
                 flex-direction: column;
@@ -432,18 +432,28 @@
             .hero .container {
                 display: flex;
                 flex-direction: column;
-                height: 100%;
+                flex: 1 0 auto;
+                width: 100%;
+            }
+
+            .hero .content {
+                margin-top: auto;
+                margin-bottom: auto;
+                padding: 16px 0;
             }
 
             .hero-image {
-                margin-top: auto;
+                margin-top: 0;
                 margin-bottom: 0;
                 margin-left: -24px;
                 margin-right: -24px;
                 width: calc(100% + 48px);
-                height: 55vh;
+                height: clamp(180px, 38vh, 360px);
+                max-height: 40svh;
                 border-radius: 0;
+                object-fit: cover;
                 object-position: center bottom;
+                display: block;
             }
 
             .hero-actions {
@@ -452,7 +462,8 @@
                 align-items: center;
                 justify-content: center;
                 gap: 12px;
-                margin-bottom: 40px;
+                margin-top: 28px;
+                margin-bottom: 0;
             }
 
             .hero-cta,
@@ -911,12 +922,13 @@
     <main>
         <section class="hero" id="home">
             <div class="container fade-up">
+                <div class="content">
                 <h1>Operate more efficiently. Show up more effectively.</h1>
-                <p>We work with growing businesses to identify where they're losing time, clarity, or opportunity and
-                    build simpler, smarter ways to move forward.</p>
+                <p>We help growing businesses streamline operations, eliminate inefficiencies, and build smarter ways to move forward.</p>
                 <div class="hero-actions">
                     <a href="contact.html" class="hero-cta">Let's Get To Work</a>
                     <a href="#services" class="read-more" style="margin-left: 0;">Know more <span style="margin-bottom: 6px;">&rarr;</span></a>
+                </div>
                 </div>
                 <img src="hero.jpeg" alt="Hero Image" class="hero-image">
             </div>
